@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlastiDive WebVR Report</title>
+  
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
+    <script
+        src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img id="ground" src="images/floor.jpg">
+            <img id="sky" src="images/sky.jpg">
+            <img id="wall" src="images/wall1.jpg">
+            <audio id="audio" src="images/audio.mp3"></audio>
+            <img id="p2" src="images/2.png">
+            <img id="p3" src="images/3.png">
+            <img id="p4" src="images/4.png">
+            <img id="p5" src="images/5.png">
+            <img id="p6" src="images/6.png">
+            <img id="p7" src="images/7.png">
+            
+            <img id="p1" src="images/1.png">
+            <video id="demo" autoplay loop="true" src="images/demo.mp4"></video>
+            <video id="pitch" autoplay loop="true" src="images/record.mp4"></video>
+            <a-asset-item id="leftHand" src="3d/leftHandLow.gltf"></a-asset-item>
+            <a-asset-item id="rightHand" src="3d/rightHandLow.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-emtity camera position=" 2.5 1.6 10 "></a-emtity>
+        <!--Hand Controls-->
+        <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
+            teleport-controls></a-entity>
+        <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" paint-controls
+            ui></a-entity>
+
+         <a-sky src="#sky"></a-sky>
+         <a-plane src="#ground" position="0 0 0" rotation="-90 0 0" width="30" height="30"></a-plane>
+
+        <!--Room Setup-->
+        <a-box position="2.5 2.5 -2.5 " src="#wall" depth="5" height="5" width="5" color="#DDD"></a-box>
+        <a-box position="-2.5 2.5 2.5" src="#wall" depth="5" height="5" width="5"  color="#DDD"></a-box>
+        <a-box position="5 2.5 10" src="#wall" depth="1" height="5" width="10" rotation="0 90 0" color="#DDD"></a-box>
+        <a-box position="7.5 2.5 5" src="#wall" depth="1" height="5" width="5" color="#DDD"></a-box>
+        <a-box position="10 2.5 -2.5" src="#wall" depth="1" height="5" width="15" rotation="0 90 0" color="#DDD"></a-box>
+        <a-box position="2.5 2.5 -10" src="#wall" depth="1" height="5" width="15" color="#DDD"></a-box> 
+        <a-box position="-5 2.5 -7.5" src="#wall" depth="1" height="5" width="5" rotation="0 -90 0"color="#DDD"></a-box>
+        <a-box position="-7.5 2.5 -5" src="#wall" depth="1" height="5" width="5"  color="#DDD"></a-box>
+        <a-box position="-10  2.5 2.5" src="#wall" depth="1" height="5" width="15" rotation="0 -90 0" color="#DDD"></a-box>
+        <a-box position="0 2.5 12.5" src="#wall" depth="1" height="5" width="5" rotation="0 -90 0" color="#DDD"></a-box> 
+        <a-box position="-5 2.5 10" src="#wall" depth="1" height="5" width="10" color="#DDD"></a-box>
+        
+        <a-sound src="#audio" autoplay="true" loop="true" distanceModel="linear" position="0 2 5"></a-sound>
+        <a-video src="#demo" position="-5 2.5 9.4 " rotation="0 -180 0" width="4" height="2" sound="on:click"></a-video>
+        <a-video src="#pitch" position="-9.4 2.5 6 " rotation="0 90 0" width="4" height="2"></a-video>
+
+        <a-image position="2.5 2.5 0.1" src="#p1"  height="4" width="3" ></a-image>
+        <a-image position="9.4 2.5 1" src="#p2"  height="4" width="3" rotation="0 -90 0"></a-image>
+        <a-image position="6.9 2.5 -9.4" src="#p3"  height="4" width="3"  ></a-image>
+        <a-image position="-4.4 2.5 -7.5" src="#p4"  height="4" width="3" rotation="0 90 0"  ></a-image>
+        <a-image position="-2.5 2.5 -1" src="#p5"  height="4" width="3" rotation="0 -180 0"></a-image>
+        <a-image position="-9.4 2.5 -2.5" src="#p6"  height="4" width="3" rotation="0 90 0"  ></a-image>
+        <a-image position="2.5 2.5  -5.05" src="#p7" height="4" width="3" rotation="0 -180 0" ></a-image>
+        
+        
+
+
+    </a-scene>
+</body>
+</html>
